@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    
+    body {
+        overflow-y: scroll;
+    }
+}
