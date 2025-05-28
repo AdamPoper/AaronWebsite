@@ -5,12 +5,14 @@
 }
 
 body {
-    overflow-x: hidden;
-    overflow-y: hidden;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+
+    // --navbar-height: 60px;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        overflow-y: scroll;
-    }
-}
+// @media screen and (max-width: 768px) {
+//     body {
+//         overflow-y: scroll;
+//     }
+// }

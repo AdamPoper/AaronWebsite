@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: calc(100vh - var(--navbar-height) + 0.5px);
     background: url('/assets/servers.png') center/cover no-repeat;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 }
@@ -15,7 +16,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 0;
 }
   
