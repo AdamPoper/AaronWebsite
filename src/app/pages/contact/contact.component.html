@@ -1,29 +1,29 @@
 <div class="contact-page">
     <div class="contact-container">
         <h2>Contact Us</h2>
-        <form (submit)="onSubmit()">
+        <form action="https://formsubmit.co/aaronlpoper@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false" /> 
             <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required ngModel />
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
             </div>
-    
+          
             <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required ngModel />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
             </div>
-    
+          
             <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" ngModel />
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
             </div>
-    
+          
             <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" rows="4" required ngModel></textarea>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
             </div>
-    
             <button type="submit">Submit</button>
-        </form>
+        </form>          
     </div>
 </div>
   
