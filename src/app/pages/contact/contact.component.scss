@@ -34,7 +34,7 @@
     
 h2 {
     text-align: center;
-    color: #1f3f74;
+    color: var(--blue-primary);
     margin-bottom: 1.5rem;
 }
   
@@ -64,7 +64,7 @@ textarea {
 }
   
 button {
-    background-color: #1f3f74;
+    background-color: var(--blue-primary);
     color: white;
     border: none;
     padding: 0.8rem 1.2rem;
@@ -74,7 +74,7 @@ button {
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: #152d53;
+        background-color: var(--blue-primary-darker);
     }
   
     &:disabled {

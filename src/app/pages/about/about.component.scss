@@ -31,7 +31,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     width: 100%;
-    color: #1f3f74;
+    color: var(--blue-primary);
     margin: 1rem;
 }
   
@@ -61,7 +61,6 @@
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    // max-width: 700px;
 
     .founder-photo {
         width: 150px;
@@ -76,7 +75,7 @@
     h3 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
-        color: #1f3f74;
+        color: var(--blue-primary);
     }
   
     p {

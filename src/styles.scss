@@ -4,15 +4,9 @@
     padding: 0;
 }
 
-body {
-    // overflow-x: hidden;
-    // overflow-y: hidden;
-
-    // --navbar-height: 60px;
+:root {
+    --blue-primary: #1f3f74;
+    --blue-primary-darker: #152d53;
+    --blue-primary-lighter: #3b5998;
+    --blue-secondary: #3a9cc8;
 }
-
-// @media screen and (max-width: 768px) {
-//     body {
-//         overflow-y: scroll;
-//     }
-// }

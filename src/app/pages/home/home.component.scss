@@ -36,7 +36,7 @@
 }
   
 .tagline {
-    color: #3b5998;
+    color: var(--blue-primary-lighter);
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -67,7 +67,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    // flex-wrap: wrap;
 }
   
 .offerings {
@@ -76,7 +75,7 @@
     .divider {
         width: 100%;
         height: 3px;
-        background-color: #1f3f74;
+        background-color: var(--blue-primary);
     }
 }
   
@@ -99,7 +98,7 @@
     font-size: 1.1rem;
 
     button {
-        background-color: #1f3f74;
+        background-color: var(--blue-primary);
         padding: 0.5rem 1rem;
         border: none;
         font-size: 18px;
@@ -109,7 +108,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: #152d53;
+            background-color: var(--blue-primary-darker);
         }
     }
 
@@ -128,7 +127,7 @@
       
     .social a {
         text-decoration: none;
-        color: #3b5998;
+        color: var(--blue-primary-lighter);
         font-weight: bold;
     }
     
@@ -149,6 +148,67 @@
         }
     }
 }
+
+.service-item {
+    position: relative;
+    cursor: pointer;
+    color: #3a9cc8;
+    margin: 0.5rem 0;
+    text-align: center;
+  
+    &:hover {
+      color: #66c4ff;
+    }
+  
+    .description-box {
+        width: 30vw;
+        text-wrap: wrap;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        bottom: 100%; /* place it above the item */
+        left: 50%;
+        transform: translateX(-50%) translateY(0); /* horizontally center + add spacing */
+        background-color: var(--blue-primary);
+        color: #fff;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        z-index: 10;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%; /* position it at the bottom of the box */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid var(--blue-primary); // match box background
+        }
+    }
+
+    &:hover .description-box {
+        opacity: 1;
+        pointer-events: auto;
+        animation: fadeInPopup 0.3s ease forwards;
+    }
+}
+
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-0.5rem);
+    }
+}  
   
 @keyframes fadeInUp {
     0% {
@@ -174,5 +234,14 @@
     .services {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .service-item {
+        .description-box {
+            width: 100%;
+            text-wrap: wrap;
+        }
     }
 }

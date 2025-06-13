@@ -12,10 +12,17 @@
                 <h3>Technical Services</h3>
                 <div class="divider"></div>
                 <ul>
-                    <li>Wireless Design & Implementation</li>
-                    <li>Device Installation & Support</li>
-                    <li>Wi-Fi 7 Migrations</li>
-                    <li>Network Support</li>
+                    <li 
+                        *ngFor="let item of services" 
+                        class="service-item"
+                    >
+                        {{ item.title }}
+                        <div 
+                            class="description-box"
+                        >
+                            {{ item.description }}
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
