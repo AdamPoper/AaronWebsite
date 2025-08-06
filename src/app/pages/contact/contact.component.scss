@@ -2,22 +2,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - var(--navbar-height) + 0.5px);
-    background: url('/assets/servers.png') center/cover no-repeat;
-    background-attachment: fixed;
+    min-height: calc(100vh - var(--navbar-height));
     position: relative;
     overflow: hidden;
-}
+    background-color: black; // fallback color
 
-.contact-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 0;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background: url('/assets/sectorAntenna.jpg') center/cover no-repeat;
+        filter: blur(4px);
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7); // optional darkness
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
 }
   
 .contact-container {

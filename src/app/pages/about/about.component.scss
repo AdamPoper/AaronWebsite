@@ -1,24 +1,41 @@
 .about-background {
     position: relative;
-    background-image: url('/assets/servers.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: calc(100vh - var(--navbar-height) + 0.5px);
+    background-color: black; // fallback color
+    min-height: calc(100vh - var(--navbar-height) - 0.5px);
     display: flex;
     align-items: center;
     justify-content: center;
-  
+    overflow: hidden;
+
     &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background-image: url('/assets/sectorAntenna.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(4px);
+        z-index: 0;
+    }
+
+    &::after {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.8); // darkness level
-        z-index: 0;
+        background-color: rgba(0, 0, 0, 0.7); // optional darkness
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
     }
 }
   
@@ -31,7 +48,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     width: 100%;
-    color: var(--blue-primary);
     margin: 1rem;
 }
   
@@ -41,6 +57,7 @@
     h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        color: var(--blue-primary);
     }
   
     p {

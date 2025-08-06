@@ -1,26 +1,40 @@
 .home-container {
-    position: relative; /* Change from absolute to relative */
+    position: relative;
     text-align: center;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-    background-image: url('/assets/servers.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Makes the background image static */
     color: white;
-    min-height: calc(100vh - var(--navbar-height) + 1px); /* Dynamically adjust height */
-}
-  
-.home-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* adjust opacity as needed */
-    z-index: 0; /* places the overlay behind the content */
+    min-height: calc(100vh - var(--navbar-height) - 0.5px);
+    overflow: hidden;
+    background-color: black; // fallback
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background: url('/assets/sectorAntenna.jpg') center/cover no-repeat;
+        filter: blur(4px);
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7); // adjust for desired darkness
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
 }
 
 .content {
