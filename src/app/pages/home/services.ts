@@ -22,6 +22,6 @@ export const services = [
     },
     {
         title: 'Home Office',
-        description: 'Need better home office Wi-Fi? Are you in conference calls while your kids are streaming HD video? We will can optimize your current wireless setup or replace it altogether! With varying channel widths, channel assignment, bands, and custom SSIDs, nothing is impossible.'
+        description: 'Need better home office Wi-Fi? Are you in conference calls while your kids are streaming HD video? We can optimize your current wireless setup or replace it altogether! With varying channel widths, channel assignment, bands, and custom SSIDs, nothing is impossible.'
     }
 ] as ServiceItem[];
