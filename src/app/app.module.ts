@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { MethodComponent } from './pages/method/method.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { MethodComponent } from './pages/method/method.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    MethodComponent
+    BlogComponent
   ],
   imports: [
     BrowserModule,
