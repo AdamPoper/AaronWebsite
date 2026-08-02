@@ -1,4 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
 	selector: 'app-root',
@@ -6,6 +8,16 @@ import { Component, AfterViewInit } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
+	showNavbar = true;
+
+	constructor(private router: Router) {
+		this.router.events.pipe(
+			filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+		).subscribe((event) => {
+			this.showNavbar = !event.urlAfterRedirects.startsWith('/admin');
+		});
+	}
+
 	ngAfterViewInit() {
 		const navbar = document.querySelector('.navbar') as HTMLElement;
 		if (navbar) {

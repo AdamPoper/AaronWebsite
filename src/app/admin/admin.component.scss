@@ -1,0 +1,41 @@
+.admin-dashboard-page {
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f6f8;
+}
+
+.admin-dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+        color: var(--blue-primary);
+    }
+
+    button {
+        background-color: var(--blue-primary);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--blue-primary-darker);
+        }
+    }
+}
