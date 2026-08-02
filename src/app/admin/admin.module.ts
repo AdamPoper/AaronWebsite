@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminComponent } from './admin.component';
-import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { LoginComponent } from './components/login/login.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 @NgModule({
     declarations: [
         AdminComponent,
-        LoginComponent
+        LoginComponent,
+        PostsComponent,
+        CreatePostComponent
     ],
     imports: [
         CommonModule,

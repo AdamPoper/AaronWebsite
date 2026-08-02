@@ -1,0 +1,30 @@
+<div class="admin-dashboard-page">
+    <div class="admin-dashboard-container">
+        <div class="dashboard-header">
+            <h2>Admin Dashboard</h2>
+            <button (click)="logout()">Logout</button>
+        </div>
+
+        <div class="view-selector">
+            <button
+                type="button"
+                class="view-option"
+                [class.active]="activeView === 'posts'"
+                (click)="setView('posts')"
+            >
+                View Posts
+            </button>
+            <button
+                type="button"
+                class="view-option"
+                [class.active]="activeView === 'create'"
+                (click)="setView('create')"
+            >
+                Create Post
+            </button>
+        </div>
+
+        <app-posts *ngIf="activeView === 'posts'"></app-posts>
+        <app-create-post *ngIf="activeView === 'create'"></app-create-post>
+    </div>
+</div>
