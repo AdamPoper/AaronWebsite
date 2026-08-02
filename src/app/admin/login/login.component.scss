@@ -1,0 +1,125 @@
+.admin-login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: black; // fallback color
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background: url('/assets/sectorAntenna.jpg') center/cover no-repeat;
+        filter: blur(4px);
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7); // optional darkness
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.admin-login-container {
+    position: relative;
+    z-index: 1;
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255);
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: var(--blue-primary);
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+input {
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: #c0392b;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+button {
+    background-color: var(--blue-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--blue-primary-darker);
+    }
+
+    &:disabled {
+        background-color: #999;
+        cursor: not-allowed;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .admin-login-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
