@@ -39,3 +39,32 @@
         }
     }
 }
+
+.view-selector {
+    display: inline-flex;
+    border: 1.5px solid var(--blue-primary);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.view-option {
+    background: none;
+    border: none;
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--blue-primary);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover:not(.active) {
+        background-color: rgba(31, 63, 116, 0.1);
+    }
+
+    &.active {
+        background-color: var(--blue-primary);
+        color: white;
+        font-weight: bold;
+    }
+}
