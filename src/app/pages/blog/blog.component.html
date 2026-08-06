@@ -7,7 +7,7 @@
                 <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
                 <h3 class="post-title">{{ post.title }}</h3>
                 <p class="post-excerpt">{{ excerpt(post.content) }}</p>
-                <button class="read-more" type="button">Read More</button>
+                <button class="read-more" type="button" [routerLink]="['/blog', post.slug]">Read More</button>
             </article>
         </section>
     </div>

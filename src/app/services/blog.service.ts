@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, map, Observable } from "rxjs";
+import { BehaviorSubject, map, Observable, tap } from "rxjs";
 import { EnvService } from "./env.service";
 import { BlogPost } from "../pages/models/blog-post.model";
 import { BlogPostResponse } from "../pages/models/blog-post-response.model";
@@ -17,6 +17,9 @@ export class BlogService {
     private currentPageSubject = new BehaviorSubject<number>(0);
     readonly currentPage$ = this.currentPageSubject.asObservable();
 
+    private currentPostSubject = new BehaviorSubject<BlogPost | null>(null);
+    readonly currentPost$ = this.currentPostSubject.asObservable();
+
     constructor(private http: HttpClient, private envService: EnvService) { }
 
     public loadMore(): Observable<BlogPost[]> {
@@ -28,6 +31,12 @@ export class BlogService {
                 this.currentPageSubject.next(page + 1);
                 return response.posts;
             })
+        );
+    }
+
+    public fetchPost(slug: string): Observable<BlogPost> {
+        return this.http.get<BlogPost>(`${this.envService.apiBaseUrl}/posts/${slug}`).pipe(
+            tap(post => this.currentPostSubject.next(post))
         );
     }
 

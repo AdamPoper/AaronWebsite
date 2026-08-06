@@ -17,7 +17,6 @@ export class BlogComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.blogService.loadMore().subscribe();
-		this.posts$.subscribe(console.log);
 	}
 
 	excerpt(content: string): string {
