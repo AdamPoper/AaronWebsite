@@ -1,0 +1,120 @@
+.blog-background {
+    position: relative;
+    background-color: black; // fallback color
+    min-height: calc(100vh - var(--navbar-height) - 0.5px);
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background: url('/assets/sectorAntenna.jpg') center/cover no-repeat;
+        filter: blur(4px);
+        z-index: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7); // optional darkness
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.blog-page {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: var(--blue-primary);
+        margin-bottom: 1.5rem;
+    }
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.post-card {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.post-title {
+    color: var(--blue-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    background: transparent;
+    color: var(--blue-primary);
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--blue-primary-darker);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-page {
+        padding: 1.25rem;
+    }
+
+    .blog-page h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-card {
+        padding: 1rem 0;
+    }
+
+    .post-title {
+        font-size: 1.1rem;
+    }
+}

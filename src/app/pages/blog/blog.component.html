@@ -1,1 +1,14 @@
-<p>blog works!</p>
+<div class="blog-background">
+    <div class="blog-page">
+        <h2>Blog Posts</h2>
+
+        <section class="posts-list">
+            <article class="post-card" *ngFor="let post of posts$ | async">
+                <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
+                <h3 class="post-title">{{ post.title }}</h3>
+                <p class="post-excerpt">{{ excerpt(post.content) }}</p>
+                <button class="read-more" type="button">Read More</button>
+            </article>
+        </section>
+    </div>
+</div>
