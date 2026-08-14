@@ -1,5 +1,9 @@
-<div *ngIf="post$ | async as post">
-    <p>{{ post.created_at | date: 'mediumDate' }}</p>
-    <h2>{{ post.title }}</h2>
-    <div [innerHTML]="post.content"></div>
+<div class="blog-post-page">
+    <a class="back-link" routerLink="/blog">← All Blogs</a>
+
+    <ng-container *ngIf="post$ | async as post">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
+        <div class="post-content" [innerHTML]="post.content"></div>
+    </ng-container>
 </div>
