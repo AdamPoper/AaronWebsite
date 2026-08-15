@@ -101,6 +101,34 @@
     }
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    
+    .load-more-btn {
+        background-color: var(--blue-primary);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 40%;
+        transition: background-color 0.3s ease;
+    
+        &:hover {
+            background-color: var(--blue-primary-darker);
+        }
+    
+        &:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .blog-page {
         padding: 1.25rem;

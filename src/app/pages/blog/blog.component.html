@@ -9,6 +9,13 @@
                 <p class="post-excerpt">{{ excerpt(post.content) }}</p>
                 <button class="read-more" type="button" [routerLink]="['/blog', post.slug]">Read More</button>
             </article>
+            <div
+                *ngIf="(isTotalCountReached$ | async) === false"
+                class="btn-container"
+            >
+                <button class="load-more-btn" type="button" (click)="loadMore()">Load More Posts</button>
+            </div>
         </section>
+
     </div>
 </div>
