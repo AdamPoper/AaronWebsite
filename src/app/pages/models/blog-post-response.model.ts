@@ -4,4 +4,5 @@ export interface BlogPostResponse {
     posts: BlogPost[];
     pageNumber: number;
     pageSize: number;
+    total: number;
 }

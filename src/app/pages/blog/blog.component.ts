@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, map, Observable, tap } from 'rxjs';
 import { BlogService } from '../../services/blog.service';
 import { BlogPost } from '../models/blog-post.model';
 
@@ -12,6 +12,11 @@ const EXCERPT_LENGTH = 160;
 })
 export class BlogComponent implements OnInit {
 	posts$: Observable<BlogPost[]> = this.blogService.posts$;
+	totalCount$: Observable<number> = this.blogService.totalCount$;
+
+	isTotalCountReached$: Observable<boolean> = combineLatest([this.posts$, this.totalCount$]).pipe(
+		map(([posts, totalCount]) => posts.length >= totalCount)
+	);
 
 	constructor(private blogService: BlogService) { }
 
@@ -25,6 +30,10 @@ export class BlogComponent implements OnInit {
 			return plainText;
 		}
 		return plainText.slice(0, EXCERPT_LENGTH).trimEnd() + '…';
+	}
+
+	loadMore(): void {
+		this.blogService.loadMore().subscribe();
 	}
 
 	private stripHtml(html: string): string {

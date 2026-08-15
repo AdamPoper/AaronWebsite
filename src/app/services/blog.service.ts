@@ -20,6 +20,9 @@ export class BlogService {
     private currentPostSubject = new BehaviorSubject<BlogPost | null>(null);
     readonly currentPost$ = this.currentPostSubject.asObservable();
 
+    private totalCountSubject = new BehaviorSubject<number>(0);
+    readonly totalCount$ = this.totalCountSubject.asObservable();
+
     constructor(private http: HttpClient, private envService: EnvService) { }
 
     public loadMore(): Observable<BlogPost[]> {
@@ -29,6 +32,7 @@ export class BlogService {
             map((response: BlogPostResponse) => {
                 this.postsSubject.next([...this.postsSubject.value, ...response.posts]);
                 this.currentPageSubject.next(page + 1);
+                this.totalCountSubject.next(response.total);
                 return response.posts;
             })
         );
