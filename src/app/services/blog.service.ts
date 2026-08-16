@@ -47,6 +47,7 @@ export class BlogService {
     private fetchPosts(page: number, pageSize: number): Observable<BlogPostResponse> {
         const params = new HttpParams()
             .set('pageNumber', page)
+            .set('status', 'posted')
             .set('pageSize', pageSize);
 
         return this.http.get<BlogPostResponse>(`${this.envService.apiBaseUrl}/posts/get`, { params });

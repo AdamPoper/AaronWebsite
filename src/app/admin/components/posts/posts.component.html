@@ -8,9 +8,30 @@
     
     <section class="posts-list">
         <article class="post-card" *ngFor="let post of currentPagePosts$ | async">
-            <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
+            <div class="post-meta">
+                <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
+                <span class="post-status" [class.draft]="post.post_status === 'draft'" [class.posted]="post.post_status === 'posted'">{{ post.post_status }}</span>
+            </div>
             <h3 class="post-title">{{ post.title }}</h3>
             <p class="post-excerpt">{{ excerpt(post.content) }}</p>
+            <div class="post-actions" *ngIf="post.post_status === 'draft'">
+                <a
+                    class="edit"
+                    [routerLink]="['/admin/edit', post.slug]"
+                >Edit</a>
+                <span>|</span>
+                <a
+                    class="post-now"
+                    (click)="postNow(post)"
+                >Post Now</a>
+            </div>
+
+            <div class="post-actions" *ngIf="post.post_status === 'posted'">
+                <a
+                    class="unpost"
+                    (click)="unpost(post)"
+                >Unpost</a>
+            </div>
         </article>
     </section>
 </ng-container>
