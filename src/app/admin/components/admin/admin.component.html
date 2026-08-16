@@ -9,22 +9,22 @@
             <button
                 type="button"
                 class="view-option"
-                [class.active]="activeView === 'posts'"
-                (click)="setView('posts')"
+                routerLink="/admin"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
             >
                 View Posts
             </button>
             <button
                 type="button"
                 class="view-option"
-                [class.active]="activeView === 'create'"
-                (click)="setView('create')"
+                routerLink="/admin/new"
+                [class.active]="isCreateActive$ | async"
             >
                 Create Post
             </button>
         </div>
 
-        <app-posts *ngIf="activeView === 'posts'"></app-posts>
-        <app-create-post *ngIf="activeView === 'create'"></app-create-post>
+        <router-outlet></router-outlet>
     </div>
 </div>

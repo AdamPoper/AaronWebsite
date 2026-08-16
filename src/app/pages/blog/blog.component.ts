@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest, map, Observable, tap } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 import { BlogService } from '../../services/blog.service';
 import { BlogPost } from '../models/blog-post.model';
 
@@ -16,6 +16,10 @@ export class BlogComponent implements OnInit {
 
 	isTotalCountReached$: Observable<boolean> = combineLatest([this.posts$, this.totalCount$]).pipe(
 		map(([posts, totalCount]) => posts.length >= totalCount)
+	);
+
+	hasNoPosts$: Observable<boolean> = combineLatest([this.posts$, this.totalCount$]).pipe(
+		map(([posts, totalCount]) => posts.length === 0 && totalCount === 0)
 	);
 
 	constructor(private blogService: BlogService) { }

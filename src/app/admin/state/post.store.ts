@@ -21,7 +21,7 @@ export function createInitialState() {
 @Injectable({
     providedIn: 'root'
 })
-@StoreConfig({ name: 'post' })
+@StoreConfig({ name: 'post', resettable: true })
 export class PostStore extends Store<PostState> {
     constructor() {
         super(createInitialState());

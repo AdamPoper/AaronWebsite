@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { PostsStoreService } from '../../state/services/posts.store.service';
 import { PostsQuery } from '../../state/queries/posts.query';
+import { Post } from '../../model/post.model';
 
 const EXCERPT_LENGTH = 160;
 
@@ -10,7 +11,7 @@ const EXCERPT_LENGTH = 160;
     templateUrl: './posts.component.html',
     styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent implements OnInit, OnDestroy {
 
     readonly currentPagePosts$ = this.postsQuery.currentPagePosts$;
 
@@ -28,12 +29,24 @@ export class PostsComponent implements OnInit {
         this.nextPage();
     }
 
+    ngOnDestroy(): void {
+        this.postsStoreService.resetPosts();
+    }
+
     nextPage(): void {
         this.postsStoreService.nextPage().subscribe();
     }
 
     previousPage(): void {
         this.postsStoreService.previousPage().subscribe();
+    }
+
+    postNow(post: Post): void {
+        this.postsStoreService.postNow(post).subscribe();
+    }
+
+    unpost(post: Post): void {
+        this.postsStoreService.unpost(post).subscribe();
     }
 
     excerpt(content: string): string {

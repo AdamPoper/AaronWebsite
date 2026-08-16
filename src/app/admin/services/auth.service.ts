@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable } from "rxjs";
-import { EnvService } from "./env.service";
+import { EnvService } from "../../services/env.service";
 
 type AuthResponse = {
     authenticated: boolean;
