@@ -1,1 +1,16 @@
-<p>posts works!</p>
+<ng-container>
+    <app-pagination
+        [currentPage]="(currentPageDisplay$ | async) ?? 1"
+        [totalPages]="(totalPages$ | async) ?? 1"
+        (previous)="previousPage()"
+        (next)="nextPage()"
+    ></app-pagination>
+    
+    <section class="posts-list">
+        <article class="post-card" *ngFor="let post of currentPagePosts$ | async">
+            <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p class="post-excerpt">{{ excerpt(post.content) }}</p>
+        </article>
+    </section>
+</ng-container>

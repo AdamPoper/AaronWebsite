@@ -1,0 +1,17 @@
+<div class="pagination">
+    <button
+        class="page-arrow"
+        type="button"
+        [disabled]="currentPage <= 1"
+        (click)="previous.emit()"
+    >&larr;</button>
+
+    <span class="page-info">{{ currentPage }} of {{ totalPages }}</span>
+
+    <button
+        class="page-arrow"
+        type="button"
+        [disabled]="currentPage >= totalPages"
+        (click)="next.emit()"
+    >&rarr;</button>
+</div>
