@@ -2,13 +2,19 @@ import { Injectable } from "@angular/core";
 import { Post } from "../model/post.model";
 import { Store, StoreConfig } from "@datorama/akita";
 
+export const PAGE_SIZE = 10;
+
 export interface PostState {
     posts: Record<number, Post[]>;
+    currentPage: number;
+    totalCount: number;
 }
 
 export function createInitialState() {
     return {
-        posts: {}
+        posts: {},
+        currentPage: -1,
+        totalCount: 0
     };
 }
 

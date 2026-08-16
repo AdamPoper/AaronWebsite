@@ -1,0 +1,30 @@
+.posts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #ddd;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.post-title {
+    color: var(--blue-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.post-excerpt {
+    color: #333;
+    line-height: 1.5;
+}

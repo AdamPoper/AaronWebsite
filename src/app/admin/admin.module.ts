@@ -7,13 +7,15 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
     declarations: [
         AdminComponent,
         LoginComponent,
         PostsComponent,
-        CreatePostComponent
+        CreatePostComponent,
+        PaginationComponent
     ],
     imports: [
         CommonModule,
