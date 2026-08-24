@@ -5,6 +5,16 @@
     </div>
 
     <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" name="category" [(ngModel)]="category_id" [compareWith]="compareCategoryIds">
+            <option [ngValue]="null">No category</option>
+            <option *ngFor="let category of categories$ | async" [ngValue]="category.id">
+                {{ category.name }}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
         <label>Content</label>
         <quill-editor [(ngModel)]="content"></quill-editor>
     </div>
