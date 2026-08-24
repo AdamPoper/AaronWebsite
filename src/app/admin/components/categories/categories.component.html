@@ -1,0 +1,18 @@
+<div class="categories">
+    <form class="create-category-form" (ngSubmit)="createCategory()">
+        <input
+            type="text"
+            name="newCategoryName"
+            placeholder="New category name"
+            [(ngModel)]="newCategoryName"
+        />
+        <button type="submit">Add</button>
+    </form>
+
+    <ul class="categories-list">
+        <li class="category-item" *ngFor="let category of categories$ | async">
+            <span class="category-name">{{ category.name }}</span>
+            <button type="button" class="delete-btn" (click)="deleteCategory(category.id)">Delete</button>
+        </li>
+    </ul>
+</div>

@@ -3,6 +3,7 @@ import { PAGE_SIZE, PostState, PostStore } from "../post.store";
 import { Query } from "@datorama/akita";
 import { combineLatest, map } from "rxjs";
 import { Post } from "../../model/post.model";
+import { Category } from "../../model/category.model";
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +15,8 @@ export class PostsQuery extends Query<PostState> {
     readonly currentPage$ = this.select('currentPage');
 
     readonly totalCount$ = this.select('totalCount');
+
+    readonly categories$ = this.select('categories');
 
     readonly totalPages$ = this.totalCount$.pipe(
         map(totalCount => Math.ceil(totalCount / PAGE_SIZE))
@@ -40,5 +43,9 @@ export class PostsQuery extends Query<PostState> {
     
     public hasPage(pageNumber: number): boolean {
         return !!this.getPosts()[pageNumber];
+    }
+
+    public getCategories(): Category[] {
+        return this.getValue().categories;
     }
 }

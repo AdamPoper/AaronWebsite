@@ -11,6 +11,7 @@
             <div class="post-meta">
                 <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
                 <span class="post-status" [class.draft]="post.post_status === 'draft'" [class.posted]="post.post_status === 'posted'">{{ post.post_status }}</span>
+                <span class="post-category">{{ getCategoryName(post.category_id) }}</span>
             </div>
             <h3 class="post-title">{{ post.title }}</h3>
             <p class="post-excerpt">{{ excerpt(post.content) }}</p>

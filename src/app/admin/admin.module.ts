@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
         LoginComponent,
         PostsComponent,
         CreatePostComponent,
-        PaginationComponent
+        PaginationComponent,
+        CategoriesComponent
     ],
     imports: [
         CommonModule,

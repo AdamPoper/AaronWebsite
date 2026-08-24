@@ -16,11 +16,13 @@ label {
     color: #333;
 }
 
-input {
+input,
+select {
     padding: 0.6rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    background-color: white;
 }
 
 ::ng-deep quill-editor .ql-container {

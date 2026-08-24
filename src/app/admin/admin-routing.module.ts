@@ -4,6 +4,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 import { AuthGuard } from '../services/auth.guard';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
         children: [
             { path: '', component: PostsComponent },
             { path: 'new', component: CreatePostComponent },
-            { path: 'edit/:slug', component: CreatePostComponent }
+            { path: 'edit/:slug', component: CreatePostComponent },
+            { path: 'categories', component: CategoriesComponent }
         ]
     }
 ];

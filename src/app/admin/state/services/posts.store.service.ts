@@ -39,6 +39,7 @@ export class PostsStoreService {
         return this.updatePost(post.slug, {
             title: post.title,
             content: post.content,
+            category_id: post.category_id,
             post_status
         }).pipe(
             tap(updatedPost => this.replacePostInCache(updatedPost))
