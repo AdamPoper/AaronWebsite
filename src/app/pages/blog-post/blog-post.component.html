@@ -4,6 +4,6 @@
     <ng-container *ngIf="post$ | async as post">
         <h2 class="post-title">{{ post.title }}</h2>
         <p class="post-date">{{ post.created_at | date: 'mediumDate' }}</p>
-        <div class="post-content" [innerHTML]="post.content"></div>
+        <div class="post-content ql-editor" [innerHTML]="post.content"></div>
     </ng-container>
 </div>
