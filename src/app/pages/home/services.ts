@@ -5,11 +5,15 @@ export type ServiceItem = {
 
 export const services = [
     {
-        title: 'Wireless Design & Implementation',
-        description: 'Need a new wireless system? We offer Wi-Fi and IoT networks that are designed around your RF environment. We will perform spectrum analysis to identify interference sources and protocol analysis for neighboring wireless networks. During implementation, we will adhere to any architectural and aesthetic requirements.'
+        title: 'Secure Passwordless Wi-Fi',
+        description: 'Eliminate credential theft by going passwordless with Microsoft Entra. Seamlessly integrate your M365 user base with your Wi-Fi. Revoke user access immediately during off-boarding. Need hardware? We will custom-configure an enterprise-ready router in our lab and ship it directly to you! Firmware updates and support are included in your subscription.'
     },
     {
-        title: 'Network Access Security',
-        description: 'We offer a cloud based RADIUS server that integrates Microsoft 365 Business Premium user credentials directly with your Wi-Fi access. No need to change Wi-Fi passwords every time your headcount is reduced. Users can get on your network using their 365 username and password.'
+        title: 'Secure User Device',
+        description: 'The new network perimeter has become the end-user device. We deploy lightweight, globally intelligent security directly to your workstations and laptops. Automatically quarantine compromised devices and block malicious links to keep your business safe. Expect weekly threat defense reports so you can see exactly how your business is being protected.'
+    },
+    {
+        title: 'Wi-Fi Implementation',
+        description: 'Invest in a distributed wireless system that connects all areas of your small office, clinic, or storefront. We have you covered with outdoor, guest, and business ready Wi-Fi access with the latest security in mind. Full-service installation available exclusively across the Greater Reading, PA area.'
     }
 ] as ServiceItem[];
