@@ -14,7 +14,7 @@
         left: -10px;
         height: calc(100% + 20px);
         width: calc(100% + 20px);
-        background: url('/assets/sectorAntenna.jpg') center/cover no-repeat;
+        background: url('/assets/sector_antenna_gemini_2.jpeg') center/cover no-repeat;
         filter: blur(4px);
         z-index: 0;
     }
@@ -26,7 +26,7 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.7); // optional darkness
+        // background-color: rgba(0, 0, 0, 0.7); // optional darkness
         z-index: 1;
     }
 
@@ -46,6 +46,11 @@
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-group label {
+    font-weight: lighter;
+    margin-left: 5px;
 }
     
 h2 {
