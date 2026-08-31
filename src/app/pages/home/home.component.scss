@@ -16,7 +16,7 @@
         height: calc(100% + 20px);
         width: calc(100% + 20px);
         background: url('/assets/sector_antenna_gemini_2.jpeg') center/cover no-repeat;
-        // filter: blur(4px);
+        filter: blur(4px);
         z-index: 0;
     }
 
@@ -145,7 +145,7 @@
         margin: 0.5rem 0;
         
         a i {
-            color: var(--blue-primary-darker);
+            color: var(--blue-primary);
             margin-right: 0.5rem;
         }
     
